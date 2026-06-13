@@ -1,0 +1,259 @@
+/**
+ * wndrfl Brand System — CSS Custom Properties
+ * Version 2.0 | Source: WNDRFL_final_files, Brandbook Yucatan MX 2025
+ *
+ * Usage: Import once in your root stylesheet or <head>.
+ * Production fonts (ITC Garamond Std, GT Pressura Mono) must be installed locally.
+ * Web fallbacks (EB Garamond, Space Mono) load from Google Fonts when production fonts
+ * are unavailable.
+ *
+ * CRITICAL: Never add colors outside this file. Four colors only. No gradients.
+ */
+
+/* ─────────────────────────────────────────────────────────
+   FONTS
+   ───────────────────────────────────────────────────────── */
+
+/* Google Fonts fallback — loads when production fonts not installed */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Space+Mono&display=swap');
+
+/* Production fonts — path relative to this CSS file */
+@font-face {
+  font-family: 'ITC Garamond Std';
+  src: url('../../fonts/ITCGaramondStd-LtNarrow.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Garamond Std';
+  src: url('../../fonts/ITCGaramondStd-LtNarrowIta.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Pressura Mono';
+  src: url('../../fonts/gt-pressura-mono-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   ROOT TOKENS
+   ───────────────────────────────────────────────────────── */
+
+:root {
+
+  /* ── COLOR PALETTE ──────────────────────────────────────
+     Four colors only. No gradients. No off-palette colors.
+     White is reversal only — not a named palette member.
+  ───────────────────────────────────────────────────────── */
+
+  /* Raw palette */
+  --wndrfl-warm-gray-2:  #D3CCC2;   /* PANTONE Warm Gray 2 C | C17 M16 Y21 K0 | RGB 211 204 194 */
+  --wndrfl-warm-gray-1:  #DDD7CE;   /* PANTONE Warm Gray 1 C | C13 M12 Y16 K0 | RGB 221 215 206 */
+  --wndrfl-cool-gray-1:  #E5E1DF;   /* PANTONE Cool Gray 1 C | C9  M9  Y9  K0  | RGB 229 225 223 */
+  --wndrfl-black:        #000000;   /* PANTONE Black 6 C     | C0  M0  Y0  K100 | RGB 0 0 0       */
+  --wndrfl-white:        #FFFFFF;   /* Reversal only — not a named palette member                  */
+
+  /* Semantic surfaces */
+  --wndrfl-surface-primary:    var(--wndrfl-warm-gray-2);   /* Main canvas background */
+  --wndrfl-surface-secondary:  var(--wndrfl-warm-gray-1);   /* Cards, panels */
+  --wndrfl-surface-tertiary:   var(--wndrfl-cool-gray-1);   /* Subtle divisions */
+  --wndrfl-surface-dark:       var(--wndrfl-black);         /* Full-bleed dark sections */
+
+  /* Semantic ink */
+  --wndrfl-ink-on-light:  var(--wndrfl-black);   /* All text and logo on light surfaces */
+  --wndrfl-ink-on-dark:   var(--wndrfl-white);   /* All text and logo on dark or photography */
+
+  /* Semantic borders */
+  --wndrfl-border-default:  var(--wndrfl-black);   /* Dividers, spine lines on light */
+  --wndrfl-border-on-dark:  var(--wndrfl-white);   /* Dividers, spine lines on dark */
+
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────
+     Two typefaces only. Hierarchy never inverts.
+  ───────────────────────────────────────────────────────── */
+
+  --wndrfl-font-heading:  'ITC Garamond Std', 'EB Garamond', Georgia, serif;
+  --wndrfl-font-body:     'GT Pressura Mono', 'Space Mono', 'Courier New', monospace;
+  --wndrfl-font-weight:   300;   /* Light — only weight in use */
+
+
+  /* ── TYPE SCALE (base canvas 1080px) ────────────────────
+     Scale proportionally for other canvas sizes.
+     At 540px display: divide all values by 2.
+  ───────────────────────────────────────────────────────── */
+
+  --wndrfl-size-display:       54px;   /* Event/display headline — ITC Garamond Italic */
+  --wndrfl-size-brand-phrase:  42px;   /* [Subject] is wndrfl — ITC Garamond */
+  --wndrfl-size-sub-brand:     20px;   /* Sub-brand labels — GT Pressura Mono tracked */
+  --wndrfl-size-date-location: 18px;   /* Date / location — GT Pressura Mono */
+  --wndrfl-size-body:          16px;   /* Body copy — GT Pressura Mono */
+  --wndrfl-size-url:           14px;   /* wndrfl.com — GT Pressura Mono, muted */
+
+
+  /* ── LETTER SPACING ─────────────────────────────────────*/
+
+  --wndrfl-tracking-default:     0em;       /* Garamond headlines */
+  --wndrfl-tracking-body:        0.04em;
+  --wndrfl-tracking-date:        0.18em;
+  --wndrfl-tracking-url:         0.12em;
+  --wndrfl-tracking-sub-brand:   0.32em;    /* Range: 0.28–0.35em */
+
+
+  /* ── LINE HEIGHT ────────────────────────────────────────*/
+
+  --wndrfl-leading-heading:  1.1;
+  --wndrfl-leading-body:     1.5;
+  --wndrfl-leading-label:    1.3;
+
+
+  /* ── OPACITY ────────────────────────────────────────────*/
+
+  --wndrfl-opacity-body-on-photo:  0.65;   /* Body copy on photography */
+  --wndrfl-opacity-url:            0.40;   /* URL — range 35–45% */
+  --wndrfl-opacity-spine-line:     0.62;   /* Vertical spine on photography */
+  --wndrfl-opacity-dot-on-photo:   0.38;   /* Dot trail elements on photography */
+
+
+  /* ── LOGO SIZING ────────────────────────────────────────
+     Percentages are relative to canvas width.
+  ───────────────────────────────────────────────────────── */
+
+  --wndrfl-logo-post-width:         22%;     /* 1080×1350: 18–22% canvas width */
+  --wndrfl-logo-story-width:        23%;     /* 1080×1920: 20–25% canvas width */
+  --wndrfl-logo-master-width:       14%;     /* 2560×1440: 12–15% canvas width */
+  --wndrfl-logo-min-width:          110px;   /* Absolute digital minimum */
+  --wndrfl-symbol-min-diameter:     60px;    /* Absolute digital minimum */
+
+
+  /* ── GRAPHIC ELEMENTS ───────────────────────────────────*/
+
+  --wndrfl-spine-width:          1px;
+  --wndrfl-dot-size-min:         1.5px;
+  --wndrfl-dot-size-max:         3px;
+  --wndrfl-dot-gap-min:          4px;
+  --wndrfl-dot-gap-max:          8px;
+  --wndrfl-spine-dot-diameter:   7px;
+
+
+  /* ── CANVAS DIMENSIONS ──────────────────────────────────*/
+
+  --wndrfl-canvas-post-w:     1080px;
+  --wndrfl-canvas-post-h:     1350px;
+  --wndrfl-canvas-story-w:    1080px;
+  --wndrfl-canvas-story-h:    1920px;
+  --wndrfl-canvas-master-w:   2560px;
+  --wndrfl-canvas-master-h:   1440px;
+
+
+  /* ── MOTION ─────────────────────────────────────────────*/
+
+  --wndrfl-duration-fast:     150ms;
+  --wndrfl-duration-default:  300ms;
+  --wndrfl-duration-slow:     600ms;
+  --wndrfl-ease-default:      cubic-bezier(0.4, 0, 0.2, 1);
+  --wndrfl-ease-out:          cubic-bezier(0.0, 0, 0.2, 1);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   UTILITY CLASSES
+   ───────────────────────────────────────────────────────── */
+
+/* Surfaces */
+.wndrfl-bg-primary   { background-color: var(--wndrfl-surface-primary); }
+.wndrfl-bg-secondary { background-color: var(--wndrfl-surface-secondary); }
+.wndrfl-bg-tertiary  { background-color: var(--wndrfl-surface-tertiary); }
+.wndrfl-bg-dark      { background-color: var(--wndrfl-surface-dark); }
+
+/* Type — heading */
+.wndrfl-heading {
+  font-family: var(--wndrfl-font-heading);
+  font-weight: var(--wndrfl-font-weight);
+  font-style: normal;
+  line-height: var(--wndrfl-leading-heading);
+  letter-spacing: var(--wndrfl-tracking-default);
+}
+.wndrfl-heading-italic {
+  font-family: var(--wndrfl-font-heading);
+  font-weight: var(--wndrfl-font-weight);
+  font-style: italic;
+  line-height: var(--wndrfl-leading-heading);
+  letter-spacing: var(--wndrfl-tracking-default);
+}
+
+/* Type — body */
+.wndrfl-body {
+  font-family: var(--wndrfl-font-body);
+  font-weight: var(--wndrfl-font-weight);
+  font-size: var(--wndrfl-size-body);
+  line-height: var(--wndrfl-leading-body);
+  letter-spacing: var(--wndrfl-tracking-body);
+}
+
+/* Type — brand phrase: [Subject] is wndrfl */
+.wndrfl-phrase {
+  font-family: var(--wndrfl-font-heading);
+  font-weight: var(--wndrfl-font-weight);
+  font-style: normal;
+  font-size: var(--wndrfl-size-brand-phrase);
+  line-height: var(--wndrfl-leading-heading);
+}
+.wndrfl-phrase em {
+  font-style: italic;
+}
+
+/* Type — sub-brand label */
+.wndrfl-sub-brand {
+  font-family: var(--wndrfl-font-body);
+  font-weight: var(--wndrfl-font-weight);
+  font-size: var(--wndrfl-size-sub-brand);
+  letter-spacing: var(--wndrfl-tracking-sub-brand);
+  text-transform: uppercase;
+  line-height: var(--wndrfl-leading-label);
+}
+
+/* Type — date / location */
+.wndrfl-date-location {
+  font-family: var(--wndrfl-font-body);
+  font-weight: var(--wndrfl-font-weight);
+  font-size: var(--wndrfl-size-date-location);
+  letter-spacing: var(--wndrfl-tracking-date);
+  line-height: var(--wndrfl-leading-label);
+}
+
+/* Type — URL */
+.wndrfl-url {
+  font-family: var(--wndrfl-font-body);
+  font-weight: var(--wndrfl-font-weight);
+  font-size: var(--wndrfl-size-url);
+  letter-spacing: var(--wndrfl-tracking-url);
+  opacity: var(--wndrfl-opacity-url);
+}
+
+/* Logo fill — swap via class, never swap files */
+.wndrfl-logo-on-light path { fill: #000000; }
+.wndrfl-logo-on-dark  path { fill: #ffffff; }
+
+/* Graphic element fill — normalize rasterization near-blacks */
+.wndrfl-element-on-light path { fill: #000000; }
+.wndrfl-element-on-dark  path { fill: #ffffff; }
+
+/* Spine line */
+.wndrfl-spine {
+  display: block;
+  width: var(--wndrfl-spine-width);
+  background-color: var(--wndrfl-border-default);
+  opacity: var(--wndrfl-opacity-spine-line);
+}
+.wndrfl-bg-dark .wndrfl-spine,
+.wndrfl-spine--on-dark {
+  background-color: var(--wndrfl-border-on-dark);
+}

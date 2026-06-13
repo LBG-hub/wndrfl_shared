@@ -1,0 +1,7 @@
+{
+  "name": "wndrfl Brand System Setup",
+  "id": "wndrfl-brand-system-setup-v2",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}

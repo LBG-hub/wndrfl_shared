@@ -1,0 +1,184 @@
+{
+  "$schema": "https://schemas.tokens.studio/latest/tokens.schema.json",
+  "$metadata": {
+    "name": "wndrfl Brand System — Figma Variables",
+    "version": "2.0.0",
+    "format": "Tokens Studio for Figma (Figma Variables plugin compatible)",
+    "instructions": "Import via Tokens Studio plugin: Tokens > Load from file > select this file. Then sync to Figma Variables via Plugin > Sync Variables."
+  },
+
+  "Palette": {
+    "Warm Gray 2": {
+      "$value": "#D3CCC2",
+      "$type": "color",
+      "$description": "PANTONE Warm Gray 2 C. Primary background."
+    },
+    "Warm Gray 1": {
+      "$value": "#DDD7CE",
+      "$type": "color",
+      "$description": "PANTONE Warm Gray 1 C. Secondary background."
+    },
+    "Cool Gray 1": {
+      "$value": "#E5E1DF",
+      "$type": "color",
+      "$description": "PANTONE Cool Gray 1 C. Tertiary neutral."
+    },
+    "Black": {
+      "$value": "#000000",
+      "$type": "color",
+      "$description": "PANTONE Black 6 C. Primary text and logo on light."
+    },
+    "White": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$description": "Reversal only. Logo and text on dark or photography."
+    }
+  },
+
+  "Surface": {
+    "Primary": {
+      "$value": "{Palette.Warm Gray 2}",
+      "$type": "color",
+      "$description": "Main canvas background."
+    },
+    "Secondary": {
+      "$value": "{Palette.Warm Gray 1}",
+      "$type": "color",
+      "$description": "Cards, panels."
+    },
+    "Tertiary": {
+      "$value": "{Palette.Cool Gray 1}",
+      "$type": "color",
+      "$description": "Subtle divisions."
+    },
+    "Dark": {
+      "$value": "{Palette.Black}",
+      "$type": "color",
+      "$description": "Full-bleed dark sections."
+    }
+  },
+
+  "Ink": {
+    "On Light": {
+      "$value": "{Palette.Black}",
+      "$type": "color",
+      "$description": "Text and logo on any light surface."
+    },
+    "On Dark": {
+      "$value": "{Palette.White}",
+      "$type": "color",
+      "$description": "Text and logo on dark surface or photography."
+    }
+  },
+
+  "Typography": {
+    "Font Family/Heading": {
+      "$value": "ITC Garamond Std",
+      "$type": "fontFamily",
+      "$description": "Production font. Fallback: EB Garamond."
+    },
+    "Font Family/Body": {
+      "$value": "GT Pressura Mono",
+      "$type": "fontFamily",
+      "$description": "Production font. Fallback: Space Mono."
+    },
+    "Font Weight/Light": {
+      "$value": "300",
+      "$type": "fontWeight",
+      "$description": "Only weight in use across both typefaces."
+    },
+    "Size/Display": {
+      "$value": "54",
+      "$type": "fontSize",
+      "$description": "Event/display headline. At 1080px canvas."
+    },
+    "Size/Brand Phrase": {
+      "$value": "42",
+      "$type": "fontSize",
+      "$description": "[Subject] is wndrfl. At 1080px canvas."
+    },
+    "Size/Sub-brand": {
+      "$value": "20",
+      "$type": "fontSize",
+      "$description": "Sub-brand label. Tracked uppercase."
+    },
+    "Size/Date Location": {
+      "$value": "18",
+      "$type": "fontSize",
+      "$description": "Date and location fields."
+    },
+    "Size/Body": {
+      "$value": "16",
+      "$type": "fontSize",
+      "$description": "Body copy."
+    },
+    "Size/URL": {
+      "$value": "14",
+      "$type": "fontSize",
+      "$description": "wndrfl.com URL. 40% opacity."
+    },
+    "Tracking/Default": {
+      "$value": "0",
+      "$type": "letterSpacing",
+      "$description": "Garamond headlines."
+    },
+    "Tracking/Body": {
+      "$value": "4",
+      "$type": "letterSpacing",
+      "$description": "0.04em — body copy."
+    },
+    "Tracking/Date Location": {
+      "$value": "18",
+      "$type": "letterSpacing",
+      "$description": "0.18em — date and location."
+    },
+    "Tracking/URL": {
+      "$value": "12",
+      "$type": "letterSpacing",
+      "$description": "0.12em — URL."
+    },
+    "Tracking/Sub-brand": {
+      "$value": "32",
+      "$type": "letterSpacing",
+      "$description": "0.32em — sub-brand label."
+    },
+    "Line Height/Heading": {
+      "$value": "110",
+      "$type": "lineHeight",
+      "$description": "Tight heading line height."
+    },
+    "Line Height/Body": {
+      "$value": "150",
+      "$type": "lineHeight",
+      "$description": "Standard body line height."
+    },
+    "Line Height/Label": {
+      "$value": "130",
+      "$type": "lineHeight",
+      "$description": "Label and metadata line height."
+    }
+  },
+
+  "Opacity": {
+    "Body on Photo": {
+      "$value": "0.65",
+      "$type": "opacity",
+      "$description": "Body copy on photography."
+    },
+    "URL": {
+      "$value": "0.40",
+      "$type": "opacity",
+      "$description": "wndrfl.com URL."
+    },
+    "Spine Line": {
+      "$value": "0.62",
+      "$type": "opacity",
+      "$description": "Vertical spine on photography."
+    },
+    "Dot on Photo": {
+      "$value": "0.38",
+      "$type": "opacity",
+      "$description": "Dot trail elements on photography."
+    }
+  }
+}
